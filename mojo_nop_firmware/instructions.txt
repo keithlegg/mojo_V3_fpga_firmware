@@ -1,0 +1,25 @@
+
+
+This will compile and flash firmware that sets all pins on the microcontroller to HIGHZ state. 
+
+It may be useful for testing, or a template to code your own firmware for the mojo V3 FPGA board 
+(atmega atmega32U4 chip, not the Spartan6 FPGA).
+
+
+#TO SET THE DEFAULT FUSES 
+sudo avrdude -V -c usbtiny -p m32u4 -U lfuse:w:0x5e:m -U hfuse:w:0x99:m 
+
+#OR FOR THE FULL DEFAULT FUSES (INCLUDING EFUSE): 
+sudo avrdude -V -c usbtiny -p m32u4 -U lfuse:w:0x5e:m -U hfuse:w:0x99:m -U efuse:w:0xf3:m  
+
+
+
+to test:
+
+plug the device in and run "sudo dmesg"
+if it assigns a /dev/SERIAL address than the firmare is working 
+if not, the device is set to HIGHZ
+ 
+ 
+
+

@@ -1,0 +1,1 @@
+avrdude -P usb -v -p atmega32u4 -c usbtiny -e -U flash:w:./Projects/mojov3legacy/Loader.hex
