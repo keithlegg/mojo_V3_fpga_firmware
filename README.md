@@ -3,9 +3,9 @@ legacy firmware for the mojo V3 with modern LUFA library (raw serial, not using 
 
 THIS IS THE OLD LEGACY FIRMWARE, NOT THE ONE THAT THE AUTHOR SAYS TO USE. 
 
-Uses code from two other github repos mentiooned in the readme: 
+Uses code from two other github repos mentioned in the readme: 
 
-This is a "modern" version that will compile on the latest linux (ubuntu 24.04.1 LTS) with the latest version of LUFA (v170418) in an attempt to keep the Mojo FPGA alive and relevant. 
+This is a "modern" version that will compile on the latest linux (ubuntu 24.04.1 LTS) with the latest version of LUFA (v170418) in an attempt to keep the Mojo FPGA alive and relevant. Be aware the LUFA library has been trimmed down and is not complete. 
 
 
 To install:
