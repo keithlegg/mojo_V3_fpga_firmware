@@ -214,6 +214,7 @@ void loaderTask() {
 					CDC_Device_SendByte(&VirtualSerial_CDC_Interface, 'D');
 				}
 				break;
+
 			case READ_SIZE:
 				transferSize |= ((uint32_t) byte << (byteCount++ * 8));
 				if (byteCount > 3) {
@@ -229,6 +230,7 @@ void loaderTask() {
 					CDC_Device_SendByte(&VirtualSerial_CDC_Interface, 'O');
 				}
 				break;
+
 			case WRITE_TO_FLASH:
 				// we can only use the batch write for even addresses
 				// so address 5 is written as a single byte
@@ -263,6 +265,7 @@ void loaderTask() {
 					}
 				}
 				break;
+
 			case WRITE_TO_FPGA:
 				sendByte(byte);
 				if (++byteCount == transferSize) {
@@ -273,6 +276,7 @@ void loaderTask() {
 					CDC_Device_SendByte(&VirtualSerial_CDC_Interface, 'D');
 				}
 				break;
+
 			case VERIFY_FLASH:
 				if (byte == 'S') {
 					byteCount += 5;
@@ -290,6 +294,7 @@ void loaderTask() {
 					state = LOAD_FROM_FLASH;
 				}
 				break;
+				
 			case LOAD_FROM_FLASH:
 				if (byte == 'L') {
 					loadFromFlash();
